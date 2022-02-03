@@ -1,0 +1,30 @@
+---
+
+- hosts: new
+  tasks:
+
+    - name: Determine available groups
+      getent:
+        database: group
+
+    - name: Using dict2items
+      #debug:
+      #  msg: "found 2000"
+      set_fact:
+        usegid: 0
+      when: "item.value[1] == '35'"
+      loop: "{{ ansible_facts.getent_group | dict2items }}"
+
+
+
+    - name: "use 35"
+      debug:
+        msg: "we are using 2000"
+      when: usegid is undefined
+      
+    - name: "use next"
+      debug:
+        msg: "we are using the next number"
+      when: usegid is defined
+
+    

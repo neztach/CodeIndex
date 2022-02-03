@@ -1,0 +1,25 @@
+---
+
+#This exmaple is to check if a file exists 
+
+
+- hosts: all
+  #become: yes
+  tasks:
+
+    - name: Ansible check directory exists example.
+      stat:
+        path: /etc/example
+      register: example_must_exist
+
+  # print message if it does exist and is a directory
+    - debug:
+        msg: "Directory EXISTS"
+      #when: files_must_exist.stat.exists and files_must_exist.stat.isdir
+      when: example_must_exist.stat.isdir is defined and example_must_exist.stat.isdir
+
+  # print message if it DOES NOT exist
+    - debug:
+        msg: "Directory DOES NOT EXISTS"
+      #when: files_must_exist.stat.exists and files_must_exist.stat.isdir
+      when: example_must_exist.stat.isdir is not defined

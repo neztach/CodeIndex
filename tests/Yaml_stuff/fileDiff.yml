@@ -1,0 +1,16 @@
+---
+
+#Use this playbook to check local files against remote files.
+
+
+
+- hosts: all
+  become: no
+
+  tasks:
+    - name: "diff between local and remote" 
+      copy:
+        src: /home/example/testsour.txt
+        dest: /home/example/testsour.txt
+      check_mode: yes
+      diff: yes

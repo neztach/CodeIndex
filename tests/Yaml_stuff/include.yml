@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+ 
+ 
+  tasks:
+    
+    - name: Ansible date timestamp example
+      shell: "date"
+      register: shell_output
+
+    - debug:
+        msg: "{{ shell_output.stdout }}"
+    
+    # this playbook must not have a host or task variable as its inherited 
+    - name: Run the security feature playbook
+      include: somefile.yml

@@ -1,0 +1,13 @@
+---
+#!!CodeIndex: Use this playbook to capture epoch time from ansible variable
+
+
+
+- hosts: all
+ 
+ 
+  tasks:
+    
+    - name: Ansible date timestamp example
+      debug:
+        var: "{{ ansible_date_time.epoch | int }}"
