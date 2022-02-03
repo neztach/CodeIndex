@@ -5,7 +5,7 @@ A PowerShell module to index all your script/code files.
 I have way to many scripts in many different languages and I’m always digging through them to find out how I solved a specific issue I’ve done in the past (when google fails me!, or not!). This is a PowerShell module used to index all your script/code files into an SQLite database. This then allows you to quickly search your files for specific content. 
 
 ## Warning
-This app is far from flawless, I still have some improvements/features I need to implement. I'm also still a PowerShell noob and some of the code might not be as clean as it should be. I'm sure there's better ways to implement some of the code. I'm also brand new to github so if there are comments or whatever, feel free to leave them. Maybe that's what issues are for? Also This has only been tested on Windows 10, PSVersion 5.1.18362.1801, but I'm sure it will work with other OS's and versions. 
+This app is far from flawless, I still have some improvements/features I need to implement. There is little to none error checking :). I'm also still a PowerShell noob and some of the code might not be as clean as it should be. I'm sure there's better ways to implement some of the code. I'm also brand new to github so if there are comments or whatever, feel free to leave them. Maybe that's what issues are for? Also This has only been tested on Windows 10, PSVersion 5.1.18362.1801, but I'm sure it will work with other OS's and versions. 
 
 ## Requirements
 This module is dependent on the [PSSQLite](https://www.powershellgallery.com/packages/PSSQLite/1.1.0) module to interact with the database.
@@ -35,7 +35,7 @@ PS> Get-Help Get-CodeIndex -Detailed
 ```
 
 ### Set-CodeIndex
-This is simply used to set a global variable for the database path. This variable is used for all other CodeIndex functions. 
+This is simply used to set a global variable for the database path and output background color. These variables are used for all other CodeIndex functions. 
 
 ### New-CodeIndex
 This is used to generate a new CodeIndex Database "codeindex.db". By default it will be placed in "$($PSScriptRoot)\db\"
