@@ -21,11 +21,14 @@ PS> Install-Module -Name PSSQLite
 
 
 ## Install
-This isn't on the gallery yet so you will have to manually install it. Download the files or zip. Check your current PowerShell Module Path 
+This isn't on the gallery yet so you will have to manually install it. Download the files or zip. Check your current PowerShell Module Path: 
 ```
 PS> $env:PSModulePath
 ```
-Create a folder called "CodeIndex" in one of them paths, then place the files in there. Close and reopen PowerShell maybe? 
+Create a folder called "CodeIndex" in one of them paths, then place the files in there. Close and reopen PowerShell or import the module:
+```
+PS> Import-Module CodeIndex
+```
 
 ## Usage
 All functions have a comment based helper so you can use the get-help cmdlet. For example: 
@@ -55,3 +58,6 @@ test data in this repo.
 PS> New-CodeIndex  # or use an existing one
 PS> Add-CodeIndex -LoadTestData
 PS> Get-CodeIndex -GetTestData
+
+## Screenshots
+![2022-02-02_17-00-22](https://user-images.githubusercontent.com/98922534/152263661-5c53b59e-9ba3-4801-85f8-92cb60c8e66f.png)
