@@ -58,6 +58,6 @@ test data in this repo.
 PS> New-CodeIndex  # or use an existing one
 PS> Add-CodeIndex -LoadTestData
 PS> Get-CodeIndex -GetTestData
-
+```
 ## Screenshots
 ![2022-02-02_17-00-22](https://user-images.githubusercontent.com/98922534/152263661-5c53b59e-9ba3-4801-85f8-92cb60c8e66f.png)
